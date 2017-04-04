@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <QCARConfig xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="qcar_config.xsd">
   <Tracking>
+    <ImageTarget name="frame" size="0.670000 0.376875" />
+    <ImageTarget name="test" size="0.250000 0.133234" />
+    <ImageTarget name="chips_scaled" size="0.247000 0.172707" />
     <ImageTarget name="test-da2" size="0.450000 0.705586" />
   </Tracking>
 </QCARConfig>

@@ -7,14 +7,27 @@ public class TextureAnimation : MonoBehaviour {
     public int framesPerSecond = 10;
 
     private float timer = 0.0f;
+    private Renderer renderer;
+    private AudioSource audio;
+
+    void Start() {
+        renderer = GetComponent<Renderer>();
+        audio = GetComponent<AudioSource>();
+    }
 
     void Update() {
         int index = (int) (Time.time * framesPerSecond);
         index = index % frames.Count;
-        GetComponent<Renderer>().material.mainTexture = frames[index];
+        renderer.material.mainTexture = frames[index];
 
-        // timer = (timer + Time.deltaTime * framesPerSecond) % frames.Count;
-        // Debug.Log(timer);
-        // GetComponent<SpriteRenderer>().sprite = frames[(int) timer];
+        if (renderer.enabled) {
+            if(!audio.isPlaying) {
+                audio.Play();
+            }
+        } else {
+            if (audio.isPlaying) {
+                audio.Stop();
+            }
+        }
     }
 }
