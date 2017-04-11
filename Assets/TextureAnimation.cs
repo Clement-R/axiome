@@ -8,26 +8,35 @@ public class TextureAnimation : MonoBehaviour {
 
     private float timer = 0.0f;
     private Renderer renderer;
-    private AudioSource audio;
+    // private AudioSource audio;
+    private uint eventId = 0;
 
     void Start() {
         renderer = GetComponent<Renderer>();
-        audio = GetComponent<AudioSource>();
     }
 
     void Update() {
+        // Manage texture animation
         int index = (int) (Time.time * framesPerSecond);
         index = index % frames.Count;
         renderer.material.mainTexture = frames[index];
-
-        if (renderer.enabled) {
-            if(!audio.isPlaying) {
-                audio.Play();
+        
+        // Manage sound
+        if(renderer.enabled) {
+            if (eventId == 0) {
+                eventId = AkSoundEngine.PostEvent("mood_test", gameObject, (uint)AkCallbackType.AK_EndOfEvent, SoundEndCallback, null);
             }
         } else {
-            if (audio.isPlaying) {
-                audio.Stop();
+            if (eventId != 0) {
+                AkSoundEngine.StopPlayingID(eventId);
+                eventId = 0;
             }
+        }
+    }
+
+    void SoundEndCallback (object in_cookie, AkCallbackType in_type, object in_info) {
+        if (in_type == AkCallbackType.AK_EndOfEvent) {
+            eventId = 0;
         }
     }
 }
