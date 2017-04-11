@@ -1,0 +1,6 @@
+Event	ID	Name			Wwise Object Path	Notes
+	45781367	mood_test			\Default Work Unit\mood_test	
+
+In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
+	298772246	test mood axiome	C:\Users\clement.rondeau\Documents\axiome\wwise\.cache\Android\SFX\test mood axiome_9E69E797.wem		\Actor-Mixer Hierarchy\Default Work Unit\test mood axiome		27112588
+

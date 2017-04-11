@@ -4,17 +4,7 @@ using UnityEngine;
 using UnityEngine.Networking;
 
 public class PlaySound : NetworkBehaviour {
-    public GameObject audioSourcePrefab;
-
-    private GameObject audioSource;
-
 	void Start () {
-        audioSource = Instantiate(audioSourcePrefab);
+        AkSoundEngine.PostEvent("mood_test", gameObject);
     }
-
-    /*
-    void override OnStartServer() {
-        if(isServer && )
-    }
-    */
 }
