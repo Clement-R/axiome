@@ -21,12 +21,17 @@
 			<ShortName>SoundBank</ShortName>
 			<Path>SoundBank.bnk</Path>
 			<IncludedEvents>
+				<Event Id="2217265458" Name="congrats" ObjectPath="\Events\Default Work Unit\congrats"/>
 				<Event Id="45781367" Name="mood_test" ObjectPath="\Events\Default Work Unit\mood_test"/>
 			</IncludedEvents>
 			<IncludedMemoryFiles>
 				<File Id="298772246" Language="SFX">
 					<ShortName>test mood axiome.wav</ShortName>
 					<Path>SFX\test mood axiome_9E69E797.wem</Path>
+				</File>
+				<File Id="757118283" Language="SFX">
+					<ShortName>congrats.wav</ShortName>
+					<Path>SFX\congrats_9E69E797.wem</Path>
 				</File>
 			</IncludedMemoryFiles>
 		</SoundBank>

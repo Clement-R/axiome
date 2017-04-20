@@ -16,9 +16,19 @@ MonoBehaviour:
   - PhysicalPath: Events\Default Work Unit.wwu
     ParentPhysicalPath: 
     Guid: '{9A008EA6-78AA-4382-B22A-A38632770768}'
-    m_lastTimePsrt1: -1779088852
-    m_lastTimePart2: -1999339300
+    m_lastTimePsrt1: -1175079669
+    m_lastTimePart2: -1999339100
     List:
+    - Name: congrats
+      Path: Default Work Unit\congrats
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: congrats
+        ObjectType: 3
+      ID: -2077701838
+      Guid: 3f33563e2d53f3479185058dbced28d8
+      maxAttenuation: 0
     - Name: mood_test
       Path: Default Work Unit\mood_test
       PathAndIcons:
@@ -54,8 +64,8 @@ MonoBehaviour:
   - PhysicalPath: SoundBanks\Default Work Unit.wwu
     ParentPhysicalPath: 
     Guid: '{6B654014-F522-4DBE-979C-31FBAA774C3B}'
-    m_lastTimePsrt1: -1715508163
-    m_lastTimePart2: -1999339300
+    m_lastTimePsrt1: -1096460291
+    m_lastTimePart2: -1999339100
     List:
     - Name: SoundBank
       Path: Default Work Unit\SoundBank
