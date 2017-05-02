@@ -1,6 +1,36 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <QCARConfig xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="qcar_config.xsd">
   <Tracking>
+    <ImageTarget name="albumGrandMere17_" size="0.150000 0.103950" />
+    <ImageTarget name="albumGrandMere16" size="0.104000 0.150072" />
+    <ImageTarget name="albumGrandMere15_" size="0.150000 0.103950" />
+    <ImageTarget name="albumGrandMere14" size="0.104000 0.150072" />
+    <ImageTarget name="albumGrandMere13_" size="0.150000 0.103950" />
+    <ImageTarget name="albumGrandMere12_" size="0.150000 0.103950" />
+    <ImageTarget name="albumGrandMere11bis_" size="0.150000 0.103950" />
+    <ImageTarget name="albumGrandMere11_" size="0.150000 0.103950" />
+    <ImageTarget name="albumGrandMere10bis_" size="0.150000 0.103950" />
+    <ImageTarget name="albumGrandMere10_" size="0.150000 0.103950" />
+    <ImageTarget name="albumGrandMere09" size="0.104000 0.150072" />
+    <ImageTarget name="albumGrandMere08_" size="0.150000 0.103950" />
+    <ImageTarget name="albumGrandMere07" size="0.104000 0.150072" />
+    <ImageTarget name="albumGrandMere06_" size="0.150000 0.103950" />
+    <ImageTarget name="albumGrandMere05_" size="0.150000 0.103950" />
+    <ImageTarget name="albumGrandMere04" size="0.104000 0.150072" />
+    <ImageTarget name="albumGrandMere03_" size="0.150000 0.103950" />
+    <ImageTarget name="albumGrandMere02_" size="0.150000 0.103950" />
+    <ImageTarget name="albumGrandMere01" size="0.104000 0.150072" />
+    <ImageTarget name="albumEnfantMort11" size="15.000000 10.395034" />
+    <ImageTarget name="albumEnfantMort10" size="15.000000 10.395034" />
+    <ImageTarget name="albumEnfantMort09_" size="10.400000 15.007165" />
+    <ImageTarget name="albumEnfantMort08" size="15.000000 10.395034" />
+    <ImageTarget name="albumEnfantMort07" size="15.000000 10.395034" />
+    <ImageTarget name="albumEnfantMort06_" size="10.400000 15.007165" />
+    <ImageTarget name="albumEnfantMort05" size="15.000000 10.395034" />
+    <ImageTarget name="albumEnfantMort04_" size="10.400000 15.007165" />
+    <ImageTarget name="albumEnfantMort03_" size="10.400000 15.007165" />
+    <ImageTarget name="albumEnfantMort02" size="15.000000 10.395034" />
+    <ImageTarget name="albumEnfantMort01" size="15.000000 10.395034" />
     <ImageTarget name="frame" size="0.670000 0.376875" />
     <ImageTarget name="test" size="0.250000 0.133234" />
     <ImageTarget name="chips_scaled" size="0.247000 0.172707" />
