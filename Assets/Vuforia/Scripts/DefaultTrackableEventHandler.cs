@@ -17,13 +17,19 @@ namespace Vuforia
         #region PRIVATE_MEMBER_VARIABLES
  
         private TrackableBehaviour mTrackableBehaviour;
-    
+        private WwiseNetwork networkManager;
+
         #endregion // PRIVATE_MEMBER_VARIABLES
 
+        #region PUBLIC_MEMBER_VARIABLES
+        
+        public string albumName;
+        public int pictureId;
 
+        #endregion // PUBLIC_MEMBER_VARIABLES
 
         #region UNTIY_MONOBEHAVIOUR_METHODS
-    
+
         void Start()
         {
             mTrackableBehaviour = GetComponent<TrackableBehaviour>();
@@ -64,6 +70,14 @@ namespace Vuforia
 
 
         #region PRIVATE_METHODS
+        private void Update() {
+            if(networkManager == null) {
+                GameObject go = GameObject.Find("SoundNetwork");
+                if(go != null) {
+                    networkManager = go.GetComponent<WwiseNetwork>();
+                }
+            }
+        }
 
 
         private void OnTrackingFound()
@@ -81,6 +95,13 @@ namespace Vuforia
             foreach (Collider component in colliderComponents)
             {
                 component.enabled = true;
+            }
+
+            // networkManager
+            if(networkManager != null) {
+                networkManager.TrackImage(albumName, pictureId);
+            } else {
+                Debug.Log("Network manager not found !!");
             }
 
             Debug.Log("Trackable " + mTrackableBehaviour.TrackableName + " found");
