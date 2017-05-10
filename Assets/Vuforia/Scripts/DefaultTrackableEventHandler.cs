@@ -17,13 +17,19 @@ namespace Vuforia
         #region PRIVATE_MEMBER_VARIABLES
  
         private TrackableBehaviour mTrackableBehaviour;
-    
+        private GameObject networkManager;
+
         #endregion // PRIVATE_MEMBER_VARIABLES
 
+        #region PUBLIC_MEMBER_VARIABLES
+        
+        public string albumName;
+        public int pictureId;
 
+        #endregion // PUBLIC_MEMBER_VARIABLES
 
         #region UNTIY_MONOBEHAVIOUR_METHODS
-    
+
         void Start()
         {
             mTrackableBehaviour = GetComponent<TrackableBehaviour>();
@@ -82,6 +88,8 @@ namespace Vuforia
             {
                 component.enabled = true;
             }
+
+            // networkManager
 
             Debug.Log("Trackable " + mTrackableBehaviour.TrackableName + " found");
         }
