@@ -57,10 +57,32 @@ public class ResultScreen : MonoBehaviour {
             // Show second step (full)
             Roman_100.SetActive(true);
         }
+        
+        if(Input.GetKeyDown(KeyCode.R)) {
 
+            for (int i = 0; i < Leonie.Count; i++) {
+                Leonie[i] = false;
+            }
 
-        if(Input.GetKeyDown(KeyCode.Space)) {
+            for (int i = 0; i < Roman.Count; i++) {
+                Roman[i] = false;
+            }
+
+            Leonie_50.SetActive(false);
+            Leonie_100.SetActive(false);
+            Roman_50.SetActive(false);
+            Roman_100.SetActive(false);
+
+            index = 0;
+        }
+
+        if (Input.GetKeyDown(KeyCode.I)) {
             Leonie[index] = true;
+            index++;
+        }
+
+        if (Input.GetKeyDown(KeyCode.O)) {
+            Roman[index] = true;
             index++;
         }
     }
