@@ -24,7 +24,6 @@ GameObject:
   - component: {fileID: 114698912480119760}
   - component: {fileID: 33327883266539480}
   - component: {fileID: 114449493995954562}
-  - component: {fileID: 114232508490095192}
   m_Layer: 0
   m_Name: HorizontalImage
   m_TagString: Untagged
@@ -153,17 +152,6 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1065637672721618}
   m_Mesh: {fileID: 0}
---- !u!114 &114232508490095192
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1065637672721618}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9f04ec4add8e45c48a29ffd96c1db076, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &114401749384289394
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -200,6 +188,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5a917f0af64a6423093132dab321c15f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  albumName: 
+  pictureId: 0
 --- !u!114 &114687197011018164
 MonoBehaviour:
   m_ObjectHideFlags: 1

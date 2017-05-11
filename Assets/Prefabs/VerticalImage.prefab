@@ -24,7 +24,6 @@ GameObject:
   - component: {fileID: 114171460818197730}
   - component: {fileID: 33336029282451264}
   - component: {fileID: 114872712514888844}
-  - component: {fileID: 114877645174666402}
   m_Layer: 0
   m_Name: VerticalImage
   m_TagString: Untagged
@@ -228,14 +227,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5a917f0af64a6423093132dab321c15f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &114877645174666402
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1189250652458668}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9f04ec4add8e45c48a29ffd96c1db076, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  albumName: 
+  pictureId: 0
