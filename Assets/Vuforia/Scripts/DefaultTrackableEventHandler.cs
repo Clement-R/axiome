@@ -72,7 +72,8 @@ namespace Vuforia
         #region PRIVATE_METHODS
         private void Update() {
             if(networkManager == null) {
-                GameObject go = GameObject.Find("SoundNetwork");
+                GameObject go = GameObject.FindGameObjectWithTag("NetworkClient");
+                // GameObject go = GameObject.Find("SoundNetwork");
                 if(go != null) {
                     networkManager = go.GetComponent<WwiseNetwork>();
                 }
@@ -99,6 +100,7 @@ namespace Vuforia
 
             // networkManager
             if(networkManager != null) {
+                Debug.Log("Send to server, scan of " + albumName + " - " + pictureId);
                 networkManager.TrackImage(albumName, pictureId);
             } else {
                 Debug.Log("Network manager not found !!");

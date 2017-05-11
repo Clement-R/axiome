@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - ResultScreen
+  - NetworkClient
   layers:
   - Default
   - TransparentFX

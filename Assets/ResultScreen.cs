@@ -27,20 +27,30 @@ public class ResultScreen : MonoBehaviour {
 	
 	void Update () {
         // LEONIE ALBUM
-        if (Leonie.FindAll(e => e == true).Count > Leonie.Count / 2) {
+        if (Leonie.FindAll(e => e == true).Count /*> Leonie.Count / 2*/ == 1) {
             // Show first step
             Leonie_50.SetActive(true);
         }
 
-        if(!Leonie.Contains(false)) {
+        if (Leonie.FindAll(e => e == true).Count /*> Leonie.Count / 2*/ == 2) {
+            // Show first step
+            Leonie_100.SetActive(true);
+        }
+
+        if (!Leonie.Contains(false)) {
             // Show second step (full)
             Leonie_100.SetActive(true);
         }
 
         // ROMAN ALBUM
-        if (Roman.FindAll(e => e == true).Count > Roman.Count / 2) {
+        if (Roman.FindAll(e => e == true).Count /*> Roman.Count / 2*/ == 1) {
             // Show first step
             Roman_50.SetActive(true);
+        }
+
+        if (Roman.FindAll(e => e == true).Count /*> Roman.Count / 2*/ == 2) {
+            // Show first step
+            Roman_100.SetActive(true);
         }
 
         if (!Roman.Contains(false)) {
