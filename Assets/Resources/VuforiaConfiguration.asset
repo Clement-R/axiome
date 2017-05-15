@@ -44,10 +44,12 @@ MonoBehaviour:
       ContainsMagnet: 0
   databaseLoad:
     dataSetsToLoad:
+    - Axiome_final
     - Axiome
     - StonesAndChips
     - Tarmac
     dataSetsToActivate:
+    - Axiome_final
     - Axiome
     - StonesAndChips
   videoBackground:
