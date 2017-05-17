@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <QCARConfig xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="qcar_config.xsd">
   <Tracking>
+    <ImageTarget name="albumEnfantMort02_TEST" size="0.150000 0.104000" />
     <ImageTarget name="albumGrandMere14_" size="0.104000 0.150000" />
     <ImageTarget name="albumGrandMere13_" size="0.150000 0.104000" />
     <ImageTarget name="albumGrandMere12_" size="0.150000 0.104000" />
