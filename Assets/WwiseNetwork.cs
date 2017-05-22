@@ -30,6 +30,10 @@ public class WwiseNetwork : NetworkBehaviour {
             }
             return;
         }
+
+        if(Input.GetKeyDown(KeyCode.Space)) {
+            CmdTrackImage("L", Random.Range(1, 10));
+        }
     }
 
     public void TrackImage(string albumName, int id) {

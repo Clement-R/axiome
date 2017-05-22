@@ -20,21 +20,16 @@ public class ResultScreen : MonoBehaviour {
             Leonie.Add(false);
         }
 
-        for (int i = 0; i < 11; i++) {
+        for (int i = 0; i < 9; i++) {
             Roman.Add(false);
         }
     }
 	
 	void Update () {
         // LEONIE ALBUM
-        if (Leonie.FindAll(e => e == true).Count /*> Leonie.Count / 2*/ == 1) {
+        if (Leonie.FindAll(e => e == true).Count > (Leonie.Count / 2)) {
             // Show first step
             Leonie_50.SetActive(true);
-        }
-
-        if (Leonie.FindAll(e => e == true).Count /*> Leonie.Count / 2*/ == 2) {
-            // Show first step
-            Leonie_100.SetActive(true);
         }
 
         if (!Leonie.Contains(false)) {
@@ -43,14 +38,9 @@ public class ResultScreen : MonoBehaviour {
         }
 
         // ROMAN ALBUM
-        if (Roman.FindAll(e => e == true).Count /*> Roman.Count / 2*/ == 1) {
+        if (Roman.FindAll(e => e == true).Count > Roman.Count / 2) {
             // Show first step
             Roman_50.SetActive(true);
-        }
-
-        if (Roman.FindAll(e => e == true).Count /*> Roman.Count / 2*/ == 2) {
-            // Show first step
-            Roman_100.SetActive(true);
         }
 
         if (!Roman.Contains(false)) {
