@@ -21,6 +21,7 @@ GameObject:
   - component: {fileID: 4493803893859714}
   - component: {fileID: 114623206292067124}
   - component: {fileID: 114103596095263284}
+  - component: {fileID: 114660723817045378}
   m_Layer: 0
   m_Name: NetworkManager
   m_TagString: Untagged
@@ -47,11 +48,13 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1755365639510018}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 200ba9f6905544b449b99a1e81e7d486, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  debugLog: {fileID: 0}
+  debugLog2: {fileID: 0}
 --- !u!114 &114623206292067124
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -122,3 +125,18 @@ MonoBehaviour:
   matchSize: 4
   isNetworkActive: 0
   matchMaker: {fileID: 0}
+--- !u!114 &114660723817045378
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1755365639510018}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 227461547, guid: dc443db3e92b4983b9738c1131f555cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  manager: {fileID: 0}
+  showGUI: 1
+  offsetX: 0
+  offsetY: 0
