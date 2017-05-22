@@ -11,6 +11,9 @@ public class WwiseNetwork : NetworkBehaviour {
     [Command]
     void CmdTrackImage(string albumName, int id) {
         if(resultScreenManager != null) {
+
+            Debug.LogWarning("Scan received : " + albumName + " : " + id);
+
             switch(albumName) {
                 case "L":
                     resultScreenManager.Leonie[id - 1] = true;
@@ -37,6 +40,7 @@ public class WwiseNetwork : NetworkBehaviour {
     }
 
     public void TrackImage(string albumName, int id) {
+        Debug.LogWarning("Scan send : " + albumName + " : " + id);
         CmdTrackImage(albumName, id);
     }
 }
