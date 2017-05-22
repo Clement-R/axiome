@@ -4,7 +4,8 @@ using UnityEngine;
 using UnityEngine.Networking;
 
 public class NetworkManagerAuto : MonoBehaviour {
-    public NetworkManager manager;
+    private NetworkManager manager;
+    private NetworkClient client = null;
 
     void Awake() {
         manager = GetComponent<NetworkManager>();
@@ -16,9 +17,10 @@ public class NetworkManagerAuto : MonoBehaviour {
                 manager.StartServer();
             }
         }
-        else if (Application.platform == RuntimePlatform.Android) {
-            if(!manager.IsClientConnected()) {
-                manager.StartClient();
+
+        else if (Application.platform == RuntimePlatform.Android || Application.platform == RuntimePlatform.WindowsEditor) {
+            if(client == null) {
+                client = manager.StartClient();
             }
         }
     }
