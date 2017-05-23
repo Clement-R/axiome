@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ResultScreen : MonoBehaviour {
     private GameObject networkManager;
@@ -24,28 +25,49 @@ public class ResultScreen : MonoBehaviour {
             Roman.Add(false);
         }
     }
-	
-	void Update () {
+
+    IEnumerator ShowImage(Image image) {
+        float elapsedTime = 0;
+        Color used = image.GetComponent<Image>().color;
+
+        while (elapsedTime < 1.5f) {
+            image.color = new Color(used.r, used.g, used.b, Mathf.Lerp(0, 1, (elapsedTime / 1.5f)));
+            elapsedTime += Time.deltaTime;
+            yield return new WaitForEndOfFrame();
+        }
+    }
+
+    void Update () {
         // LEONIE ALBUM
         if (Leonie.FindAll(e => e == true).Count > (Leonie.Count / 2)) {
             // Show first step
-            Leonie_50.SetActive(true);
+            // Color used = Leonie_50.GetComponent<Image>().color;
+            // Leonie_50.GetComponent<Image>().color = new Color(used.r, used.g, used.b, 1);
+            if(Leonie_50.GetComponent<Image>().color.a == 0) {
+                StartCoroutine(ShowImage(Leonie_50.GetComponent<Image>()));
+            }
         }
 
         if (!Leonie.Contains(false)) {
             // Show second step (full)
-            Leonie_100.SetActive(true);
+            if (Leonie_100.GetComponent<Image>().color.a == 0) {
+                StartCoroutine(ShowImage(Leonie_100.GetComponent<Image>()));
+            }
         }
 
         // ROMAN ALBUM
         if (Roman.FindAll(e => e == true).Count > Roman.Count / 2) {
             // Show first step
-            Roman_50.SetActive(true);
+            if (Roman_50.GetComponent<Image>().color.a == 0) {
+                StartCoroutine(ShowImage(Roman_50.GetComponent<Image>()));
+            }
         }
 
         if (!Roman.Contains(false)) {
             // Show second step (full)
-            Roman_100.SetActive(true);
+            if (Roman_100.GetComponent<Image>().color.a == 0) {
+                StartCoroutine(ShowImage(Roman_100.GetComponent<Image>()));
+            }
         }
         
         if(Input.GetKeyDown(KeyCode.R)) {
@@ -58,10 +80,17 @@ public class ResultScreen : MonoBehaviour {
                 Roman[i] = false;
             }
 
-            Leonie_50.SetActive(false);
-            Leonie_100.SetActive(false);
-            Roman_50.SetActive(false);
-            Roman_100.SetActive(false);
+            Color used = Leonie_50.GetComponent<Image>().color;
+            Leonie_50.GetComponent<Image>().color = new Color(used.r, used.g, used.b, 0);
+
+            used = Leonie_100.GetComponent<Image>().color;
+            Leonie_100.GetComponent<Image>().color = new Color(used.r, used.g, used.b, 0);
+
+            used = Roman_50.GetComponent<Image>().color;
+            Roman_50.GetComponent<Image>().color = new Color(used.r, used.g, used.b, 0);
+
+            used = Roman_100.GetComponent<Image>().color;
+            Roman_100.GetComponent<Image>().color = new Color(used.r, used.g, used.b, 0);
 
             index = 0;
         }
