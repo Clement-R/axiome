@@ -16,6 +16,8 @@ public class ResultScreen : MonoBehaviour {
     public List<bool> Leonie = new List<bool>();
     public List<bool> Roman = new List<bool>();
 
+    public float startTime = 0.0f;
+
     void Start () {
         for (int i = 0; i < 17; i++) {
             Leonie.Add(false);
@@ -24,6 +26,8 @@ public class ResultScreen : MonoBehaviour {
         for (int i = 0; i < 9; i++) {
             Roman.Add(false);
         }
+
+        startTime = Time.time;
     }
 
     IEnumerator ShowImage(Image image) {
@@ -69,6 +73,11 @@ public class ResultScreen : MonoBehaviour {
                 StartCoroutine(ShowImage(Roman_100.GetComponent<Image>()));
             }
         }
+
+        // After 10mins
+        if (Time.time - startTime > 600) {
+            Debug.Log("End of the experience");
+        }
         
         if(Input.GetKeyDown(KeyCode.R)) {
 
@@ -93,6 +102,8 @@ public class ResultScreen : MonoBehaviour {
             Roman_100.GetComponent<Image>().color = new Color(used.r, used.g, used.b, 0);
 
             index = 0;
+
+            startTime = Time.time;
         }
 
         if (Input.GetKeyDown(KeyCode.I)) {
