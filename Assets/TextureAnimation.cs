@@ -10,16 +10,45 @@ public class TextureAnimation : MonoBehaviour {
     private Renderer renderer;
     // private AudioSource audio;
     private uint eventId = 0;
+    private bool stop = false;
+    private float startTime = 0.0f;
+    private int lastIndex = 0;
 
     void Start() {
         renderer = GetComponent<Renderer>();
     }
 
     void Update() {
-        // Manage texture animation
-        int index = (int) (Time.time * framesPerSecond);
-        index = index % frames.Count;
-        renderer.material.mainTexture = frames[index];
+        // Manage animation
+        if (!stop) {
+            if (renderer.enabled) {
+                // Manage texture animation
+                int index = (int)((Time.time - startTime) * framesPerSecond);
+                index = index % frames.Count;
+                renderer.material.mainTexture = frames[index];
+
+                if (index == frames.Count - 1) {
+                    stop = true;
+                }
+            }
+        } else {
+            int index = (int)((Time.time - startTime) * framesPerSecond);
+            index = index % frames.Count;
+
+            if(index != lastIndex) {
+                lastIndex = index;
+                if(lastIndex % 2 == 0) {
+                    renderer.material.mainTexture = frames[frames.Count - 2];
+                } else {
+                    renderer.material.mainTexture = frames[frames.Count - 1];
+                }
+            }
+        }
+
+        if (!renderer.enabled) {
+            startTime = Time.time;
+            stop = false;
+        }
         
         // Manage sound
         if(renderer.enabled) {

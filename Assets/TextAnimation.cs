@@ -9,21 +9,29 @@ public class TextAnimation : MonoBehaviour {
     private float timer = 0.0f;
     private Renderer renderer;
     private bool stop = false;
+    private float startTime = 0.0f;
 
     void Start() {
         renderer = GetComponent<Renderer>();
     }
 
     void Update() {
-        if(!stop) {
-            // Manage texture animation
-            int index = (int)(Time.time * framesPerSecond);
-            index = index % frames.Count;
-            renderer.material.mainTexture = frames[index];
+        if (!stop) {
+            if (renderer.enabled) {
+                // Manage texture animation
+                int index = (int)((Time.time - startTime) * framesPerSecond);
+                index = index % frames.Count;
+                renderer.material.mainTexture = frames[index];
 
-            if (index == frames.Count - 1) {
-                stop = true;
+                if (index == frames.Count - 1) {
+                    stop = true;
+                }
             }
+        }
+        
+        if (!renderer.enabled) {
+            startTime = Time.time;
+            stop = false;
         }
     }
 }
