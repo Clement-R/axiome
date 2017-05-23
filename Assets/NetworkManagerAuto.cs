@@ -5,8 +5,6 @@ using UnityEngine.Networking;
 using UnityEngine.UI;
 
 public class NetworkManagerAuto : MonoBehaviour {
-    public GameObject debugLog;
-    public GameObject debugLog2;
 
     private NetworkManager manager;
 
@@ -25,10 +23,6 @@ public class NetworkManagerAuto : MonoBehaviour {
 
             if (noConnection) {
                 manager.StartClient();
-                debugLog.GetComponent<Text>().text = "Disconnected";
-                debugLog2.GetComponent<Text>().text = manager.networkPort + "";
-            } else {
-                debugLog.GetComponent<Text>().text = "Connected";
             }
         }
     }
