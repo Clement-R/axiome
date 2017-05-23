@@ -74,9 +74,13 @@ public class ResultScreen : MonoBehaviour {
             }
         }
 
+        if(!Roman.Contains(false) && !Leonie.Contains(false)) {
+            Debug.Log("End of the experience (all found)");
+        }
+
         // After 10mins
         if (Time.time - startTime > 600) {
-            Debug.Log("End of the experience");
+            Debug.Log("End of the experience (timer)");
         }
         
         if(Input.GetKeyDown(KeyCode.R)) {
