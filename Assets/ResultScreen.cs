@@ -10,6 +10,10 @@ public class ResultScreen : MonoBehaviour {
     public GameObject Leonie_100;
     public GameObject Roman_50;
     public GameObject Roman_100;
+    public GameObject endPanel;
+
+    public int leonieCount = 17;
+    public int romanCount = 9;
 
     int index = 0;
 
@@ -19,11 +23,11 @@ public class ResultScreen : MonoBehaviour {
     public float startTime = 0.0f;
 
     void Start () {
-        for (int i = 0; i < 17; i++) {
+        for (int i = 0; i < leonieCount; i++) {
             Leonie.Add(false);
         }
 
-        for (int i = 0; i < 9; i++) {
+        for (int i = 0; i < romanCount; i++) {
             Roman.Add(false);
         }
 
@@ -79,8 +83,10 @@ public class ResultScreen : MonoBehaviour {
         }
 
         // After 10mins
-        if (Time.time - startTime > 600) {
-            Debug.Log("End of the experience (timer)");
+        if (Time.time - startTime > 60) {
+            if (endPanel.GetComponent<Image>().color.a == 0) {
+                StartCoroutine(ShowImage(endPanel.GetComponent<Image>()));
+            }
         }
         
         if(Input.GetKeyDown(KeyCode.R)) {
@@ -104,6 +110,9 @@ public class ResultScreen : MonoBehaviour {
 
             used = Roman_100.GetComponent<Image>().color;
             Roman_100.GetComponent<Image>().color = new Color(used.r, used.g, used.b, 0);
+
+            used = endPanel.GetComponent<Image>().color;
+            endPanel.GetComponent<Image>().color = new Color(used.r, used.g, used.b, 0);
 
             index = 0;
 
