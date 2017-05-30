@@ -8,18 +8,39 @@ public class ResultScreen : MonoBehaviour {
 
     public GameObject Leonie_50;
     public GameObject Leonie_100;
+
     public GameObject Roman_50;
     public GameObject Roman_100;
+
+    public GameObject Perle_100;
+
+    public GameObject Aglae1_50;
+    public GameObject Aglae1_100;
+
+    public GameObject Aglae2_50;
+    public GameObject Aglae2_100;
+
+    public GameObject Marcel_50;
+    public GameObject Marcel_100;
+
     public GameObject endPanel;
     public GameObject endImage;
 
-    public int leonieCount = 17;
+    public int leonieCount = 14;
     public int romanCount = 9;
+    public int perleCount = 1;
+    public int aglae1Count = 4;
+    public int aglae2Count = 6;
+    public int marcelCount = 10;
 
     int index = 0;
 
     public List<bool> Leonie = new List<bool>();
     public List<bool> Roman = new List<bool>();
+    public List<bool> Perle = new List<bool>();
+    public List<bool> Aglae1 = new List<bool>();
+    public List<bool> Aglae2 = new List<bool>();
+    public List<bool> Marcel = new List<bool>();
 
     public float startTime = 0.0f;
 
@@ -32,10 +53,30 @@ public class ResultScreen : MonoBehaviour {
             Roman.Add(false);
         }
 
+        for (int i = 0; i < perleCount; i++) {
+            Perle.Add(false);
+        }
+
+        for (int i = 0; i < aglae1Count; i++) {
+            Aglae1.Add(false);
+        }
+
+        for (int i = 0; i < aglae2Count; i++) {
+            Aglae2.Add(false);
+        }
+
+        for (int i = 0; i < marcelCount; i++) {
+            Marcel.Add(false);
+        }
+
         startTime = Time.time;
     }
 
-    IEnumerator ShowImage(Image image) {
+    IEnumerator ShowImage(Image image, float delay = 0f) {
+        if (delay != 0f) {
+            yield return new WaitForSeconds(delay);
+        }
+
         float elapsedTime = 0;
         Color used = image.GetComponent<Image>().color;
 
@@ -48,10 +89,8 @@ public class ResultScreen : MonoBehaviour {
 
     void Update () {
         // LEONIE ALBUM
-        if (Leonie.FindAll(e => e == true).Count > (Leonie.Count / 2)) {
+        if (Leonie.FindAll(e => e == true).Count == 1) {
             // Show first step
-            // Color used = Leonie_50.GetComponent<Image>().color;
-            // Leonie_50.GetComponent<Image>().color = new Color(used.r, used.g, used.b, 1);
             if(Leonie_50.GetComponent<Image>().color.a == 0) {
                 StartCoroutine(ShowImage(Leonie_50.GetComponent<Image>()));
             }
@@ -65,7 +104,7 @@ public class ResultScreen : MonoBehaviour {
         }
 
         // ROMAN ALBUM
-        if (Roman.FindAll(e => e == true).Count > Roman.Count / 2) {
+        if (Roman.FindAll(e => e == true).Count == 1) {
             // Show first step
             if (Roman_50.GetComponent<Image>().color.a == 0) {
                 StartCoroutine(ShowImage(Roman_50.GetComponent<Image>()));
@@ -79,10 +118,64 @@ public class ResultScreen : MonoBehaviour {
             }
         }
 
-        if(!Roman.Contains(false) && !Leonie.Contains(false)) {
-            Debug.Log("End of the experience (all found)");
+        // Aglae1
+        if (Aglae1.FindAll(e => e == true).Count == 1) {
+            // Show first step
+            if (Aglae1_50.GetComponent<Image>().color.a == 0) {
+                StartCoroutine(ShowImage(Aglae1_50.GetComponent<Image>()));
+            }
+        }
+
+        if (!Aglae1.Contains(false)) {
+            // Show second step (full)
+            if (Aglae1_100.GetComponent<Image>().color.a == 0) {
+                StartCoroutine(ShowImage(Aglae1_100.GetComponent<Image>()));
+            }
+        }
+
+        // Aglae2
+        if (Aglae2.FindAll(e => e == true).Count == 1) {
+            // Show first step
+            if (Aglae2_50.GetComponent<Image>().color.a == 0) {
+                StartCoroutine(ShowImage(Aglae2_50.GetComponent<Image>()));
+            }
+        }
+
+        if (!Aglae2.Contains(false)) {
+            // Show second step (full)
+            if (Aglae2_100.GetComponent<Image>().color.a == 0) {
+                StartCoroutine(ShowImage(Aglae2_100.GetComponent<Image>()));
+            }
+        }
+
+        // Marcel
+        if (Marcel.FindAll(e => e == true).Count == 1) {
+            // Show first step
+            if (Marcel_50.GetComponent<Image>().color.a == 0) {
+                StartCoroutine(ShowImage(Marcel_50.GetComponent<Image>()));
+            }
+        }
+
+        if (!Marcel.Contains(false)) {
+            // Show second step (full)
+            if (Marcel_100.GetComponent<Image>().color.a == 0) {
+                StartCoroutine(ShowImage(Marcel_100.GetComponent<Image>()));
+            }
+        }
+
+        // Perle
+        if (!Perle.Contains(false)) {
+            // Show second step (full)
+            if (Perle_100.GetComponent<Image>().color.a == 0) {
+                StartCoroutine(ShowImage(Perle_100.GetComponent<Image>()));
+            }
+        }
+
+        // MANAGE END OF EXPERIENCE
+        // All discovered
+        if (!Roman.Contains(false) && !Leonie.Contains(false) && !Perle.Contains(false) && !Aglae1.Contains(false) && !Aglae2.Contains(false) && !Marcel.Contains(false)) {
             if (endImage.GetComponent<Image>().color.a == 0) {
-                StartCoroutine(ShowImage(endImage.GetComponent<Image>()));
+                StartCoroutine(ShowImage(endImage.GetComponent<Image>(), 0.8f));
             }
         }
 
@@ -95,6 +188,7 @@ public class ResultScreen : MonoBehaviour {
         
         if(Input.GetKeyDown(KeyCode.R)) {
 
+            // RESET LISTS
             for (int i = 0; i < Leonie.Count; i++) {
                 Leonie[i] = false;
             }
@@ -103,6 +197,23 @@ public class ResultScreen : MonoBehaviour {
                 Roman[i] = false;
             }
 
+            for (int i = 0; i < perleCount; i++) {
+                Perle.Add(false);
+            }
+
+            for (int i = 0; i < aglae1Count; i++) {
+                Aglae1.Add(false);
+            }
+
+            for (int i = 0; i < aglae2Count; i++) {
+                Aglae2.Add(false);
+            }
+
+            for (int i = 0; i < marcelCount; i++) {
+                Marcel.Add(false);
+            }
+
+            // RESET IMAGES TRANSPARENCY
             Color used = Leonie_50.GetComponent<Image>().color;
             Leonie_50.GetComponent<Image>().color = new Color(used.r, used.g, used.b, 0);
 
@@ -121,8 +232,10 @@ public class ResultScreen : MonoBehaviour {
             used = endImage.GetComponent<Image>().color;
             endImage.GetComponent<Image>().color = new Color(used.r, used.g, used.b, 0);
 
+            // RESET DEBUG
             index = 0;
 
+            // RESET TIMER
             startTime = Time.time;
         }
 
