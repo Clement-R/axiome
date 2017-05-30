@@ -11,6 +11,7 @@ public class ResultScreen : MonoBehaviour {
     public GameObject Roman_50;
     public GameObject Roman_100;
     public GameObject endPanel;
+    public GameObject endImage;
 
     public int leonieCount = 17;
     public int romanCount = 9;
@@ -80,6 +81,9 @@ public class ResultScreen : MonoBehaviour {
 
         if(!Roman.Contains(false) && !Leonie.Contains(false)) {
             Debug.Log("End of the experience (all found)");
+            if (endImage.GetComponent<Image>().color.a == 0) {
+                StartCoroutine(ShowImage(endImage.GetComponent<Image>()));
+            }
         }
 
         // After 10mins
@@ -113,6 +117,9 @@ public class ResultScreen : MonoBehaviour {
 
             used = endPanel.GetComponent<Image>().color;
             endPanel.GetComponent<Image>().color = new Color(used.r, used.g, used.b, 0);
+
+            used = endImage.GetComponent<Image>().color;
+            endImage.GetComponent<Image>().color = new Color(used.r, used.g, used.b, 0);
 
             index = 0;
 
