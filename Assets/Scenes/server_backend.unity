@@ -1765,9 +1765,25 @@ MonoBehaviour:
   Leonie_100: {fileID: 1760864778}
   Roman_50: {fileID: 1967553208}
   Roman_100: {fileID: 1090980094}
+  Perle_100: {fileID: 744538490}
+  Aglae1_50: {fileID: 1174837309}
+  Aglae1_100: {fileID: 951001949}
+  Aglae2_50: {fileID: 13873445}
+  Aglae2_100: {fileID: 1440316656}
+  Marcel_50: {fileID: 1594297979}
+  Marcel_100: {fileID: 23961288}
   endPanel: {fileID: 1269907800}
-  leonieCount: 17
+  endImage: {fileID: 1754749478}
+  leonieCount: 14
   romanCount: 9
+  perleCount: 1
+  aglae1Count: 4
+  aglae2Count: 6
+  marcelCount: 10
   Leonie: 
   Roman: 
+  Perle: 
+  Aglae1: 
+  Aglae2: 
+  Marcel: 
   startTime: 0
