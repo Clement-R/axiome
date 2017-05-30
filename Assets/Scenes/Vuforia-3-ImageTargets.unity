@@ -18086,6 +18086,17 @@ MonoBehaviour:
   decodeBank: 0
   saveDecodedBank: 0
   unloadTriggerList: 958ca0ea
+--- !u!114 &2014920222
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2014920220}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ac72ce235e57ba340ba13d628b3f0ef3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!21 &2024270538
 Material:
   serializedVersion: 6
