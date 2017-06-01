@@ -4,6 +4,7 @@ All Rights Reserved.
 Confidential and Proprietary - Protected under copyright and other laws.
 ==============================================================================*/
 
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace Vuforia
@@ -23,8 +24,14 @@ namespace Vuforia
 
         #region PUBLIC_MEMBER_VARIABLES
         
+        [System.Serializable]
+        public class AlbumContent {
+            public string albumName;
+            public int pictureId;
+        }
         public string albumName;
         public int pictureId;
+        public List<AlbumContent> albumEvent = new List<AlbumContent>();
 
         #endregion // PUBLIC_MEMBER_VARIABLES
 
@@ -41,8 +48,7 @@ namespace Vuforia
 
         #endregion // UNTIY_MONOBEHAVIOUR_METHODS
 
-
-
+        
         #region PUBLIC_METHODS
 
         /// <summary>
@@ -100,8 +106,13 @@ namespace Vuforia
 
             // networkManager
             if(networkManager != null) {
-                Debug.Log("Send to server, scan of " + albumName + " - " + pictureId);
-                networkManager.TrackImage(albumName, pictureId);
+                foreach (var image in albumEvent) {
+                    string name = image.albumName;
+                    int id = image.pictureId;
+
+                    Debug.LogWarning("Send to server, scan of " + name + " : " + id);
+                }
+                networkManager.TrackImage(albumEvent);
             } else {
                 Debug.Log("Network manager not found !!");
             }

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Networking;
 using UnityEngine.UI;
+using Vuforia;
 
 public class WwiseNetwork : NetworkBehaviour {
     bool serverStarted = false;
@@ -14,13 +15,29 @@ public class WwiseNetwork : NetworkBehaviour {
 
             Debug.LogWarning("Scan received : " + albumName + " : " + id);
 
-            switch(albumName) {
+            switch (albumName) {
                 case "L":
                     resultScreenManager.Leonie[id - 1] = true;
                     break;
 
                 case "R":
                     resultScreenManager.Roman[id - 1] = true;
+                    break;
+
+                case "M":
+                    resultScreenManager.Marcel[id - 1] = true;
+                    break;
+
+                case "P":
+                    resultScreenManager.Perle[id - 1] = true;
+                    break;
+
+                case "A":
+                    resultScreenManager.Aglae1[id - 1] = true;
+                    break;
+
+                case "B":
+                    resultScreenManager.Aglae2[id - 1] = true;
                     break;
             }
         }
@@ -33,14 +50,15 @@ public class WwiseNetwork : NetworkBehaviour {
             }
             return;
         }
-
-        if(Input.GetKeyDown(KeyCode.Space)) {
-            CmdTrackImage("L", Random.Range(1, 10));
-        }
     }
 
-    public void TrackImage(string albumName, int id) {
-        Debug.LogWarning("Scan send : " + albumName + " : " + id);
-        CmdTrackImage(albumName, id);
+    public void TrackImage(List<Vuforia.DefaultTrackableEventHandler.AlbumContent> album) {
+        foreach (var image in album) {
+            string name = image.albumName;
+            int id = image.pictureId;
+
+            Debug.LogWarning("Scan send : " + name + " : " + id);
+            CmdTrackImage(name, id);
+        }
     }
 }
