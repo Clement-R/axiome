@@ -44,7 +44,21 @@ public class ResultScreen : MonoBehaviour {
 
     public float startTime = 0.0f;
 
-    void Start () {
+    static private uint eventId = 0;
+
+    void PlayProgressionSound() {
+        if (eventId == 0) {
+            eventId = AkSoundEngine.PostEvent("Tableau_progression", gameObject, (uint)AkCallbackType.AK_EndOfEvent, SoundEndCallback, null);
+        }
+    }
+
+    void SoundEndCallback(object in_cookie, AkCallbackType in_type, object in_info) {
+        if (in_type == AkCallbackType.AK_EndOfEvent) {
+            eventId = 0;
+        }
+    }
+
+    void Start() {
         for (int i = 0; i < leonieCount; i++) {
             Leonie.Add(false);
         }
@@ -87,12 +101,13 @@ public class ResultScreen : MonoBehaviour {
         }
     }
 
-    void Update () {
+    void Update() {
         // LEONIE ALBUM
         if (Leonie.FindAll(e => e == true).Count == 1) {
             // Show first step
-            if(Leonie_50.GetComponent<Image>().color.a == 0) {
+            if (Leonie_50.GetComponent<Image>().color.a == 0) {
                 StartCoroutine(ShowImage(Leonie_50.GetComponent<Image>()));
+                PlayProgressionSound();
             }
         }
 
@@ -100,6 +115,7 @@ public class ResultScreen : MonoBehaviour {
             // Show second step (full)
             if (Leonie_100.GetComponent<Image>().color.a == 0) {
                 StartCoroutine(ShowImage(Leonie_100.GetComponent<Image>()));
+                PlayProgressionSound();
             }
         }
 
@@ -108,6 +124,7 @@ public class ResultScreen : MonoBehaviour {
             // Show first step
             if (Roman_50.GetComponent<Image>().color.a == 0) {
                 StartCoroutine(ShowImage(Roman_50.GetComponent<Image>()));
+                PlayProgressionSound();
             }
         }
 
@@ -115,6 +132,7 @@ public class ResultScreen : MonoBehaviour {
             // Show second step (full)
             if (Roman_100.GetComponent<Image>().color.a == 0) {
                 StartCoroutine(ShowImage(Roman_100.GetComponent<Image>()));
+                PlayProgressionSound();
             }
         }
 
@@ -123,6 +141,7 @@ public class ResultScreen : MonoBehaviour {
             // Show first step
             if (Aglae1_50.GetComponent<Image>().color.a == 0) {
                 StartCoroutine(ShowImage(Aglae1_50.GetComponent<Image>()));
+                PlayProgressionSound();
             }
         }
 
@@ -130,6 +149,7 @@ public class ResultScreen : MonoBehaviour {
             // Show second step (full)
             if (Aglae1_100.GetComponent<Image>().color.a == 0) {
                 StartCoroutine(ShowImage(Aglae1_100.GetComponent<Image>()));
+                PlayProgressionSound();
             }
         }
 
@@ -138,6 +158,7 @@ public class ResultScreen : MonoBehaviour {
             // Show first step
             if (Aglae2_50.GetComponent<Image>().color.a == 0) {
                 StartCoroutine(ShowImage(Aglae2_50.GetComponent<Image>()));
+                PlayProgressionSound();
             }
         }
 
@@ -145,6 +166,7 @@ public class ResultScreen : MonoBehaviour {
             // Show second step (full)
             if (Aglae2_100.GetComponent<Image>().color.a == 0) {
                 StartCoroutine(ShowImage(Aglae2_100.GetComponent<Image>()));
+                PlayProgressionSound();
             }
         }
 
@@ -153,6 +175,7 @@ public class ResultScreen : MonoBehaviour {
             // Show first step
             if (Marcel_50.GetComponent<Image>().color.a == 0) {
                 StartCoroutine(ShowImage(Marcel_50.GetComponent<Image>()));
+                PlayProgressionSound();
             }
         }
 
@@ -160,6 +183,7 @@ public class ResultScreen : MonoBehaviour {
             // Show second step (full)
             if (Marcel_100.GetComponent<Image>().color.a == 0) {
                 StartCoroutine(ShowImage(Marcel_100.GetComponent<Image>()));
+                PlayProgressionSound();
             }
         }
 
@@ -168,6 +192,7 @@ public class ResultScreen : MonoBehaviour {
             // Show second step (full)
             if (Perle_100.GetComponent<Image>().color.a == 0) {
                 StartCoroutine(ShowImage(Perle_100.GetComponent<Image>()));
+                PlayProgressionSound();
             }
         }
 
@@ -180,13 +205,13 @@ public class ResultScreen : MonoBehaviour {
         }
 
         // After 10mins
-        if (Time.time - startTime > 60) {
+        if (Time.time - startTime > 600) {
             if (endPanel.GetComponent<Image>().color.a == 0) {
                 StartCoroutine(ShowImage(endPanel.GetComponent<Image>()));
             }
         }
-        
-        if(Input.GetKeyDown(KeyCode.R)) {
+
+        if (Input.GetKeyDown(KeyCode.R)) {
 
             // RESET LISTS
             for (int i = 0; i < Leonie.Count; i++) {
