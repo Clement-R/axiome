@@ -7,13 +7,20 @@ Vuforia is a trademark of PTC Inc., registered in the United States and other
 countries.
 ===============================================================================*/
 using UnityEngine;
+using UnityEngine.UI;
 using System.Collections;
 
 public class AboutScreen : MonoBehaviour
 {
+    #region PUBLIC_ATTRIBUTES
+    public InputField serverAddress;
+    #endregion // PUBLIC_ATTRIBUTES
+
     #region PUBLIC_METHODS
     public void OnStartAR()
     {
+        PlayerPrefs.SetString("ip", serverAddress.text);
+        PlayerPrefs.Save();
         Debug.Log("Starttt");
         UnityEngine.SceneManagement.SceneManager.LoadScene("Vuforia-2-Loading");
     }

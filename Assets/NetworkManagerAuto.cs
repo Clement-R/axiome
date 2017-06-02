@@ -22,6 +22,7 @@ public class NetworkManagerAuto : MonoBehaviour {
                                  manager.client.connection.connectionId == -1);
 
             if (noConnection) {
+                manager.networkAddress = PlayerPrefs.GetString("ip");
                 manager.StartClient();
             }
         }
