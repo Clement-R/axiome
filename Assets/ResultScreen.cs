@@ -223,19 +223,19 @@ public class ResultScreen : MonoBehaviour {
             }
 
             for (int i = 0; i < perleCount; i++) {
-                Perle.Add(false);
+                Perle[i] = false;
             }
 
             for (int i = 0; i < aglae1Count; i++) {
-                Aglae1.Add(false);
+                Aglae1[i] = false;
             }
 
             for (int i = 0; i < aglae2Count; i++) {
-                Aglae2.Add(false);
+                Aglae2[i] = false;
             }
 
             for (int i = 0; i < marcelCount; i++) {
-                Marcel.Add(false);
+                Marcel[i] = false;
             }
 
             // RESET IMAGES TRANSPARENCY
@@ -250,6 +250,28 @@ public class ResultScreen : MonoBehaviour {
 
             used = Roman_100.GetComponent<Image>().color;
             Roman_100.GetComponent<Image>().color = new Color(used.r, used.g, used.b, 0);
+
+
+            used = Perle_100.GetComponent<Image>().color;
+            Perle_100.GetComponent<Image>().color = new Color(used.r, used.g, used.b, 0);
+
+            used = Aglae1_50.GetComponent<Image>().color;
+            Aglae1_50.GetComponent<Image>().color = new Color(used.r, used.g, used.b, 0);
+
+            used = Aglae1_100.GetComponent<Image>().color;
+            Aglae1_100.GetComponent<Image>().color = new Color(used.r, used.g, used.b, 0);
+
+            used = Aglae2_50.GetComponent<Image>().color;
+            Aglae2_50.GetComponent<Image>().color = new Color(used.r, used.g, used.b, 0);
+
+            used = Aglae2_100.GetComponent<Image>().color;
+            Aglae2_100.GetComponent<Image>().color = new Color(used.r, used.g, used.b, 0);
+
+            used = Marcel_50.GetComponent<Image>().color;
+            Marcel_50.GetComponent<Image>().color = new Color(used.r, used.g, used.b, 0);
+
+            used = Marcel_100.GetComponent<Image>().color;
+            Marcel_100.GetComponent<Image>().color = new Color(used.r, used.g, used.b, 0);
 
             used = endPanel.GetComponent<Image>().color;
             endPanel.GetComponent<Image>().color = new Color(used.r, used.g, used.b, 0);
