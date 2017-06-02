@@ -29,8 +29,6 @@ namespace Vuforia
             public string albumName;
             public int pictureId;
         }
-        public string albumName;
-        public int pictureId;
         public List<AlbumContent> albumEvent = new List<AlbumContent>();
 
         #endregion // PUBLIC_MEMBER_VARIABLES
