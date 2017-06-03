@@ -45,10 +45,18 @@ public class ResultScreen : MonoBehaviour {
     public float startTime = 0.0f;
 
     static private uint eventId = 0;
+    static private bool canPlaySound = true;
+
+    IEnumerator unlockSoundSemaphor() {
+        canPlaySound = false;
+        yield return new WaitForSeconds(1.5f);
+        canPlaySound = true;
+    }
 
     void PlayProgressionSound() {
-        if (eventId == 0) {
+        if (canPlaySound) {
             eventId = AkSoundEngine.PostEvent("Tableau_progression", gameObject, (uint)AkCallbackType.AK_EndOfEvent, SoundEndCallback, null);
+            StartCoroutine("unlockSoundSemaphor");
         }
     }
 

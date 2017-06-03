@@ -120,7 +120,7 @@ RectTransform:
   m_LocalScale: {x: 0.99999696, y: 0.99999696, z: 0.99999696}
   m_Children: []
   m_Father: {fileID: 2139606891}
-  m_RootOrder: 4
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -208,7 +208,7 @@ RectTransform:
   m_LocalScale: {x: 0.99999696, y: 0.99999696, z: 0.99999696}
   m_Children: []
   m_Father: {fileID: 2139606891}
-  m_RootOrder: 9
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -326,6 +326,8 @@ GameObject:
   - component: {fileID: 532848841}
   - component: {fileID: 532848840}
   - component: {fileID: 532848843}
+  - component: {fileID: 532848845}
+  - component: {fileID: 532848844}
   m_Layer: 0
   m_Name: WwiseGlobal
   m_TagString: Untagged
@@ -395,6 +397,48 @@ MonoBehaviour:
   decodeBank: 0
   saveDecodedBank: 0
   unloadTriggerList: 958ca0ea
+--- !u!114 &532848844
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 532848839}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 343e258bf9b390647b50cfa483cd6e90, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  triggerList: f7e1664c
+  useOtherObject: 0
+  valueGuid: 9e0c0ad71c31a748987d36a1d695b7b3
+  eventID: -1313589867
+  soundEmitterObject: {fileID: 0}
+  enableActionOnEvent: 0
+  actionOnEventType: 0
+  curveInterpolation: 4
+  transitionDuration: 0
+  m_callbackData: {fileID: 0}
+  playingId: 0
+  multiPositionTypeLabel: 0
+  multiPositionArray: []
+--- !u!114 &532848845
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 532848839}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7ef676a613cfd954a9ef4e37b0a51e33, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_positionOffsetData:
+    positionOffset: {x: 0, y: 0, z: 0}
+    KeepMe: 0
+  isEnvironmentAware: 1
+  listenerMask: 1
+  isStaticObject: 0
+  m_posOffsetData: {fileID: 0}
 --- !u!1 &744538490
 GameObject:
   m_ObjectHideFlags: 0
@@ -424,7 +468,7 @@ RectTransform:
   m_LocalScale: {x: 0.99999696, y: 0.99999696, z: 0.99999696}
   m_Children: []
   m_Father: {fileID: 2139606891}
-  m_RootOrder: 7
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -575,7 +619,7 @@ RectTransform:
   m_LocalScale: {x: 0.99999696, y: 0.99999696, z: 0.99999696}
   m_Children: []
   m_Father: {fileID: 2139606891}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -1404,7 +1448,7 @@ RectTransform:
   m_LocalScale: {x: 0.99999696, y: 0.99999696, z: 0.99999696}
   m_Children: []
   m_Father: {fileID: 2139606891}
-  m_RootOrder: 8
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -1584,7 +1628,7 @@ RectTransform:
   m_LocalScale: {x: 0.99999696, y: 0.99999696, z: 0.99999696}
   m_Children: []
   m_Father: {fileID: 2139606891}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -1732,12 +1776,12 @@ RectTransform:
   - {fileID: 1174837310}
   - {fileID: 1093126040}
   - {fileID: 1594297980}
-  - {fileID: 13873446}
   - {fileID: 1967553209}
   - {fileID: 951001950}
   - {fileID: 744538491}
   - {fileID: 1760864779}
   - {fileID: 23961289}
+  - {fileID: 13873446}
   - {fileID: 1440316657}
   - {fileID: 1090980095}
   - {fileID: 1754749479}
