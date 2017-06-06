@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <QCARConfig xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="qcar_config.xsd">
   <Tracking>
+    <ImageTarget name="albumEnfantMort02_TEST" size="0.150000 0.216346" />
+    <ImageTarget name="albumGrandMere16_" size="0.104000 0.150000" />
+    <ImageTarget name="testHand" size="0.050000 0.030357" />
     <ImageTarget name="testHand2" size="0.050000 0.018009" />
-    <ImageTarget name="testHand" size="0.050000 0.018009" />
     <ImageTarget name="albumEnfantMort05_" size="0.150000 0.104000" />
     <ImageTarget name="albumEnfantMort03_" size="0.104000 0.150000" />
     <ImageTarget name="albumEnfantMort09_" size="0.104000 0.150000" />
@@ -13,7 +15,6 @@
     <ImageTarget name="albumEnfantMort08_" size="0.150000 0.104000" />
     <ImageTarget name="albumEnfantMort11_" size="0.150000 0.104000" />
     <ImageTarget name="albumGrandMere15_" size="0.150000 0.104000" />
-    <ImageTarget name="albumGrandMere16_" size="0.104000 0.150000" />
     <ImageTarget name="albumGrandMere04_" size="0.104000 0.150000" />
     <ImageTarget name="albumGrandMere05_" size="0.150000 0.104000" />
     <ImageTarget name="albumGrandMere06_" size="0.150000 0.104000" />
@@ -29,6 +30,5 @@
     <ImageTarget name="albumGrandMere03_" size="0.150000 0.104000" />
     <ImageTarget name="albumGrandMere02_" size="0.150000 0.104000" />
     <ImageTarget name="albumGrandMere01_" size="0.104000 0.150000" />
-    <ImageTarget name="albumEnfantMort02_TEST" size="0.150000 0.104000" />
   </Tracking>
 </QCARConfig>
