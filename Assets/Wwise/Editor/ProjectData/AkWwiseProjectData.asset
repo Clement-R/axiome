@@ -16,8 +16,8 @@ MonoBehaviour:
   - PhysicalPath: Events\Default Work Unit.wwu
     ParentPhysicalPath: 
     Guid: '{9A008EA6-78AA-4382-B22A-A38632770768}'
-    m_lastTimePsrt1: -2090763718
-    m_lastTimePart2: -1999328630
+    m_lastTimePsrt1: 143290402
+    m_lastTimePart2: -1999327779
     List:
     - Name: ambiance
       Path: Default Work Unit\ambiance
@@ -129,6 +129,16 @@ MonoBehaviour:
       ID: 917128578
       Guid: b6deb22f6a6dc146b70739696a88f160
       maxAttenuation: 0
+    - Name: tableau_complete
+      Path: Default Work Unit\tableau_complete
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: tableau_complete
+        ObjectType: 3
+      ID: 1193590829
+      Guid: 4f49e73c5c44b74993a54c29c73ca87f
+      maxAttenuation: 0
     - Name: Tableau_progression
       Path: Default Work Unit\Tableau_progression
       PathAndIcons:
@@ -143,8 +153,8 @@ MonoBehaviour:
   - PhysicalPath: Master-Mixer Hierarchy\Default Work Unit.wwu
     ParentPhysicalPath: 
     Guid: '{6F60C9F3-3765-4009-AF8E-93101277CF57}'
-    m_lastTimePsrt1: -2090663623
-    m_lastTimePart2: -1999328630
+    m_lastTimePsrt1: 143305416
+    m_lastTimePart2: -1999327779
     List: []
   StateWwu:
   - PhysicalPath: States\Default Work Unit.wwu
