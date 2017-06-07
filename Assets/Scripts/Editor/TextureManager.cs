@@ -16,13 +16,19 @@ public class TextureManager : EditorWindow {
     public void OnGUI() {
         string[] path = { "Assets/Assets/MotionDesign" };
         if (GUILayout.Button("Reimport textures")) {
+            TextureImporterPlatformSettings androidSettings = new TextureImporterPlatformSettings();
+            androidSettings.name = "Android";
+            androidSettings.maxTextureSize = 512;
+            androidSettings.overridden = true;
+
             string[] motionDesignTextures = AssetDatabase.FindAssets("Comp t:texture2D", path);
             foreach (var texture in motionDesignTextures) {
                 TextureImporter textureSettings = TextureImporter.GetAtPath(AssetDatabase.GUIDToAssetPath(texture)) as TextureImporter;
 
-                textureSettings.maxTextureSize = 1024;
+                textureSettings.maxTextureSize = 512;
                 textureSettings.mipmapEnabled = false;
-
+                
+                textureSettings.SetPlatformTextureSettings(androidSettings);
                 textureSettings.SaveAndReimport();
             }
         }
