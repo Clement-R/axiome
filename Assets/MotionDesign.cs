@@ -4,10 +4,15 @@ using UnityEngine;
 
 public class MotionDesign : MonoBehaviour {
     public int id;
+    public GameObject textPrefab;
+    
+    private void OnEnable() {
+        Object text = Resources.Load("MotionDesign/text (" + id + ")", typeof(GameObject));
+        textPrefab = Instantiate(text, transform) as GameObject;
+        textPrefab.transform.position = new Vector3(textPrefab.transform.position.x, textPrefab.transform.position.y, transform.position.z);
+    }
 
-	void Start () {
-        Object text = Resources.Load("MotionDesign/text (" + id +")", typeof(GameObject));
-        GameObject obj = Instantiate(text, transform) as GameObject;
-        obj.transform.position = new Vector3(obj.transform.position.x, obj.transform.position.y, transform.position.z);
+    private void OnDisable() {
+        Destroy(textPrefab);
     }
 }
