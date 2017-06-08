@@ -6,6 +6,9 @@ using UnityEngine.UI;
 public class ResultScreen : MonoBehaviour {
     private GameObject networkManager;
 
+    public int experienceDuration = 720;
+    public bool debug = false;
+
     public GameObject Leonie_50;
     public GameObject Leonie_100;
 
@@ -46,6 +49,7 @@ public class ResultScreen : MonoBehaviour {
 
     static private uint eventId = 0;
     static private bool canPlaySound = true;
+    static private bool endSound = false;
 
     IEnumerator unlockSoundSemaphor() {
         canPlaySound = false;
@@ -60,8 +64,18 @@ public class ResultScreen : MonoBehaviour {
         }
     }
 
-    void PlayCompleteSound() {
-        AkSoundEngine.PostEvent("tableau_complete", gameObject, (uint)AkCallbackType.AK_EndOfEvent, null, null);
+    IEnumerator PlayCompleteSound() {
+        if(!endSound) {
+            endSound = true;
+            yield return new WaitForSeconds(0.2f);
+            AkSoundEngine.PostEvent("tableau_complete", gameObject, (uint)AkCallbackType.AK_EndOfEvent, SoundCompleteEndCallback, null);
+        }
+    }
+
+    void SoundCompleteEndCallback(object in_cookie, AkCallbackType in_type, object in_info) {
+        if (in_type == AkCallbackType.AK_EndOfEvent) {
+            endSound = false;
+        }
     }
 
     void SoundEndCallback(object in_cookie, AkCallbackType in_type, object in_info) {
@@ -114,6 +128,32 @@ public class ResultScreen : MonoBehaviour {
     }
 
     void Update() {
+        if(debug) {
+            for (int i = 0; i < Leonie.Count; i++) {
+                Leonie[i] = true;
+            }
+
+            for (int i = 0; i < Roman.Count; i++) {
+                Roman[i] = true;
+            }
+
+            for (int i = 0; i < perleCount; i++) {
+                Perle[i] = true;
+            }
+
+            for (int i = 0; i < aglae1Count; i++) {
+                Aglae1[i] = true;
+            }
+
+            for (int i = 0; i < aglae2Count; i++) {
+                Aglae2[i] = true;
+            }
+
+            for (int i = 0; i < marcelCount; i++) {
+                Marcel[i] = true;
+            }
+        }
+
         // LEONIE ALBUM
         if (Leonie.FindAll(e => e == true).Count == 1) {
             // Show first step
@@ -213,12 +253,12 @@ public class ResultScreen : MonoBehaviour {
         if (!Roman.Contains(false) && !Leonie.Contains(false) && !Perle.Contains(false) && !Aglae1.Contains(false) && !Aglae2.Contains(false) && !Marcel.Contains(false)) {
             if (endImage.GetComponent<Image>().color.a == 0) {
                 StartCoroutine(ShowImage(endImage.GetComponent<Image>(), 0.8f));
-                PlayCompleteSound();
+                StartCoroutine("PlayCompleteSound");
             }
         }
 
         // After 10mins
-        if (Time.time - startTime > 600) {
+        if (Time.time - startTime > experienceDuration) {
             if (endPanel.GetComponent<Image>().color.a == 0) {
                 StartCoroutine(ShowImage(endPanel.GetComponent<Image>()));
             }
