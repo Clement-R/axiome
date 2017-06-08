@@ -780,6 +780,11 @@ Prefab:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: f0aed6edb7871464a8dbf424cb0089fb, type: 2}
+    - target: {fileID: 114401749384289394, guid: fafbd6a7d4bec144ca7f5e7eeb17cbce,
+        type: 2}
+      propertyPath: WwiseEventName
+      value: Play_albumEnfantMort_1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: fafbd6a7d4bec144ca7f5e7eeb17cbce, type: 2}
   m_IsPrefabParent: 0
@@ -1610,6 +1615,11 @@ Prefab:
       propertyPath: frames.Array.data[18]
       value: 
       objectReference: {fileID: 2800000, guid: 69d03b80928204a4ea078d079232efa4, type: 3}
+    - target: {fileID: 114401749384289394, guid: fafbd6a7d4bec144ca7f5e7eeb17cbce,
+        type: 2}
+      propertyPath: WwiseEventName
+      value: Play_albumEnfantMort_2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: fafbd6a7d4bec144ca7f5e7eeb17cbce, type: 2}
   m_IsPrefabParent: 0
@@ -2193,6 +2203,11 @@ Prefab:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: dfeb3eaf85d1f184880d789102fad226, type: 2}
+    - target: {fileID: 114401749384289394, guid: fafbd6a7d4bec144ca7f5e7eeb17cbce,
+        type: 2}
+      propertyPath: WwiseEventName
+      value: Play_albumEnfantMort_11
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: fafbd6a7d4bec144ca7f5e7eeb17cbce, type: 2}
   m_IsPrefabParent: 0
@@ -3798,6 +3813,11 @@ Prefab:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: a058c3f0759cda84f86c1ca4843c5d99, type: 2}
+    - target: {fileID: 114401749384289394, guid: fafbd6a7d4bec144ca7f5e7eeb17cbce,
+        type: 2}
+      propertyPath: WwiseEventName
+      value: Play_albumGrandMere_6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: fafbd6a7d4bec144ca7f5e7eeb17cbce, type: 2}
   m_IsPrefabParent: 0
@@ -4985,6 +5005,11 @@ Prefab:
         type: 2}
       propertyPath: mWidth
       value: 0.14992788
+      objectReference: {fileID: 0}
+    - target: {fileID: 114401749384289394, guid: fafbd6a7d4bec144ca7f5e7eeb17cbce,
+        type: 2}
+      propertyPath: WwiseEventName
+      value: Play_albumGrandMere_2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: fafbd6a7d4bec144ca7f5e7eeb17cbce, type: 2}
@@ -9658,6 +9683,11 @@ Prefab:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: f56dc42fd2550d24bbdb65dc8ee25fc5, type: 2}
+    - target: {fileID: 114401749384289394, guid: fafbd6a7d4bec144ca7f5e7eeb17cbce,
+        type: 2}
+      propertyPath: WwiseEventName
+      value: Play_albumEnfantMort_8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: fafbd6a7d4bec144ca7f5e7eeb17cbce, type: 2}
   m_IsPrefabParent: 0
@@ -10832,6 +10862,11 @@ Prefab:
         type: 2}
       propertyPath: mWidth
       value: 0.14992788
+      objectReference: {fileID: 0}
+    - target: {fileID: 114401749384289394, guid: fafbd6a7d4bec144ca7f5e7eeb17cbce,
+        type: 2}
+      propertyPath: WwiseEventName
+      value: Play_albumGrandMere_13
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: fafbd6a7d4bec144ca7f5e7eeb17cbce, type: 2}
@@ -12140,6 +12175,11 @@ Prefab:
       propertyPath: frames.Array.data[18]
       value: 
       objectReference: {fileID: 2800000, guid: 0bab76a29bf61844a9ea7815275ef70f, type: 3}
+    - target: {fileID: 114463060039597644, guid: 8d945c556e5af2c43ac92e349e9793e4,
+        type: 2}
+      propertyPath: WwiseEventName
+      value: Play_albumGrandMere_4
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 8d945c556e5af2c43ac92e349e9793e4, type: 2}
   m_IsPrefabParent: 0
@@ -12475,6 +12515,11 @@ Prefab:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 92b2ea9c9f36ab4449d1549f4af276f1, type: 2}
+    - target: {fileID: 114463060039597644, guid: 8d945c556e5af2c43ac92e349e9793e4,
+        type: 2}
+      propertyPath: WwiseEventName
+      value: Play_albumGrandMere_9
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 8d945c556e5af2c43ac92e349e9793e4, type: 2}
   m_IsPrefabParent: 0
@@ -14111,6 +14156,11 @@ Prefab:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 92b1a5f389e0f2643b06c4728e4d38f5, type: 2}
+    - target: {fileID: 114401749384289394, guid: fafbd6a7d4bec144ca7f5e7eeb17cbce,
+        type: 2}
+      propertyPath: WwiseEventName
+      value: Play_albumEnfantMort_5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: fafbd6a7d4bec144ca7f5e7eeb17cbce, type: 2}
   m_IsPrefabParent: 0
