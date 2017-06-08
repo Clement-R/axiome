@@ -89,6 +89,7 @@ namespace Vuforia
         {
             Renderer[] rendererComponents = GetComponentsInChildren<Renderer>(true);
             Collider[] colliderComponents = GetComponentsInChildren<Collider>(true);
+            MotionDesign[] motionDesignManagers = GetComponentsInChildren<MotionDesign>(true);
 
             // Enable rendering:
             foreach (Renderer component in rendererComponents)
@@ -102,8 +103,13 @@ namespace Vuforia
                 component.enabled = true;
             }
 
+            // Disable motion design:
+            foreach (MotionDesign component in motionDesignManagers) {
+                component.enabled = true;
+            }
+
             // networkManager
-            if(networkManager != null) {
+            if (networkManager != null) {
                 foreach (var image in albumEvent) {
                     string name = image.albumName;
                     int id = image.pictureId;
@@ -123,6 +129,7 @@ namespace Vuforia
         {
             Renderer[] rendererComponents = GetComponentsInChildren<Renderer>(true);
             Collider[] colliderComponents = GetComponentsInChildren<Collider>(true);
+            MotionDesign[] motionDesignManagers = GetComponentsInChildren<MotionDesign>(true);
 
             // Disable rendering:
             foreach (Renderer component in rendererComponents)
@@ -133,6 +140,11 @@ namespace Vuforia
             // Disable colliders:
             foreach (Collider component in colliderComponents)
             {
+                component.enabled = false;
+            }
+
+            // Disable motion design:
+            foreach (MotionDesign component in motionDesignManagers) {
                 component.enabled = false;
             }
 
