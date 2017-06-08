@@ -60,6 +60,10 @@ public class ResultScreen : MonoBehaviour {
         }
     }
 
+    void PlayCompleteSound() {
+        AkSoundEngine.PostEvent("tableau_complete", gameObject, (uint)AkCallbackType.AK_EndOfEvent, null, null);
+    }
+
     void SoundEndCallback(object in_cookie, AkCallbackType in_type, object in_info) {
         if (in_type == AkCallbackType.AK_EndOfEvent) {
             eventId = 0;
@@ -209,6 +213,7 @@ public class ResultScreen : MonoBehaviour {
         if (!Roman.Contains(false) && !Leonie.Contains(false) && !Perle.Contains(false) && !Aglae1.Contains(false) && !Aglae2.Contains(false) && !Marcel.Contains(false)) {
             if (endImage.GetComponent<Image>().color.a == 0) {
                 StartCoroutine(ShowImage(endImage.GetComponent<Image>(), 0.8f));
+                PlayCompleteSound();
             }
         }
 
