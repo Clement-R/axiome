@@ -21,7 +21,7 @@ public class TextureManager : EditorWindow {
             androidSettings.maxTextureSize = 512;
             androidSettings.overridden = true;
 
-            string[] motionDesignTextures = AssetDatabase.FindAssets("Comp t:texture2D", path);
+            string[] motionDesignTextures = AssetDatabase.FindAssets("Comp 24_ t:texture2D", path);
             foreach (var texture in motionDesignTextures) {
                 TextureImporter textureSettings = TextureImporter.GetAtPath(AssetDatabase.GUIDToAssetPath(texture)) as TextureImporter;
 
