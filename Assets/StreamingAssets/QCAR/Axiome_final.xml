@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <QCARConfig xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="qcar_config.xsd">
   <Tracking>
+    <ImageTarget name="albumEnfantMort06_" size="0.104000 0.150000" />
     <ImageTarget name="carteIntroduction_" size="0.105000 0.148016" />
     <ImageTarget name="albumEnfantMort02_TEST" size="0.150000 0.216346" />
     <ImageTarget name="albumGrandMere16_" size="0.104000 0.150000" />
@@ -11,7 +12,6 @@
     <ImageTarget name="albumEnfantMort09_" size="0.104000 0.150000" />
     <ImageTarget name="albumEnfantMort01_" size="0.150000 0.104000" />
     <ImageTarget name="albumEnfantMort02_" size="0.150000 0.104000" />
-    <ImageTarget name="albumEnfantMort06_" size="0.104000 0.150000" />
     <ImageTarget name="albumEnfantMort07_" size="0.150000 0.104000" />
     <ImageTarget name="albumEnfantMort08_" size="0.150000 0.104000" />
     <ImageTarget name="albumEnfantMort11_" size="0.150000 0.104000" />
