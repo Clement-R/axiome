@@ -36,7 +36,7 @@ public class TextureAnimation : MonoBehaviour {
 
         // Manage sound
         if (renderer.enabled) {
-            if (eventId == 0) {
+            if (eventId == 0 && WwiseEventName != "") {
                 eventId = AkSoundEngine.PostEvent(WwiseEventName, gameObject, (uint)AkCallbackType.AK_EndOfEvent, SoundEndCallback, null);
             }
         }
