@@ -6,7 +6,9 @@ using UnityEngine.UI;
 public class ResultScreen : MonoBehaviour {
     private GameObject networkManager;
 
-    public int experienceDuration = 720;
+    public int experienceDuration1 = 720;
+    public int experienceDuration2 = 720;
+
     public bool debug = false;
 
     public GameObject Leonie_50;
@@ -50,6 +52,9 @@ public class ResultScreen : MonoBehaviour {
     static private uint eventId = 0;
     static private bool canPlaySound = true;
     static private bool endSound = false;
+
+    private bool solo = true;
+    private bool multi = false;
 
     IEnumerator unlockSoundSemaphor() {
         canPlaySound = false;
@@ -258,95 +263,104 @@ public class ResultScreen : MonoBehaviour {
         }
 
         // After 10mins
-        if (Time.time - startTime > experienceDuration) {
+        if (solo && Time.time - startTime > experienceDuration1) {
             if (endPanel.GetComponent<Image>().color.a == 0) {
                 StartCoroutine(ShowImage(endPanel.GetComponent<Image>()));
             }
         }
 
-        if (Input.GetKeyDown(KeyCode.R)) {
-
-            // RESET LISTS
-            for (int i = 0; i < Leonie.Count; i++) {
-                Leonie[i] = false;
+        if (multi && Time.time - startTime > experienceDuration2) {
+            if (endPanel.GetComponent<Image>().color.a == 0) {
+                StartCoroutine(ShowImage(endPanel.GetComponent<Image>()));
             }
-
-            for (int i = 0; i < Roman.Count; i++) {
-                Roman[i] = false;
-            }
-
-            for (int i = 0; i < perleCount; i++) {
-                Perle[i] = false;
-            }
-
-            for (int i = 0; i < aglae1Count; i++) {
-                Aglae1[i] = false;
-            }
-
-            for (int i = 0; i < aglae2Count; i++) {
-                Aglae2[i] = false;
-            }
-
-            for (int i = 0; i < marcelCount; i++) {
-                Marcel[i] = false;
-            }
-
-            // RESET IMAGES TRANSPARENCY
-            Color used = Leonie_50.GetComponent<Image>().color;
-            Leonie_50.GetComponent<Image>().color = new Color(used.r, used.g, used.b, 0);
-
-            used = Leonie_100.GetComponent<Image>().color;
-            Leonie_100.GetComponent<Image>().color = new Color(used.r, used.g, used.b, 0);
-
-            used = Roman_50.GetComponent<Image>().color;
-            Roman_50.GetComponent<Image>().color = new Color(used.r, used.g, used.b, 0);
-
-            used = Roman_100.GetComponent<Image>().color;
-            Roman_100.GetComponent<Image>().color = new Color(used.r, used.g, used.b, 0);
-
-
-            used = Perle_100.GetComponent<Image>().color;
-            Perle_100.GetComponent<Image>().color = new Color(used.r, used.g, used.b, 0);
-
-            used = Aglae1_50.GetComponent<Image>().color;
-            Aglae1_50.GetComponent<Image>().color = new Color(used.r, used.g, used.b, 0);
-
-            used = Aglae1_100.GetComponent<Image>().color;
-            Aglae1_100.GetComponent<Image>().color = new Color(used.r, used.g, used.b, 0);
-
-            used = Aglae2_50.GetComponent<Image>().color;
-            Aglae2_50.GetComponent<Image>().color = new Color(used.r, used.g, used.b, 0);
-
-            used = Aglae2_100.GetComponent<Image>().color;
-            Aglae2_100.GetComponent<Image>().color = new Color(used.r, used.g, used.b, 0);
-
-            used = Marcel_50.GetComponent<Image>().color;
-            Marcel_50.GetComponent<Image>().color = new Color(used.r, used.g, used.b, 0);
-
-            used = Marcel_100.GetComponent<Image>().color;
-            Marcel_100.GetComponent<Image>().color = new Color(used.r, used.g, used.b, 0);
-
-            used = endPanel.GetComponent<Image>().color;
-            endPanel.GetComponent<Image>().color = new Color(used.r, used.g, used.b, 0);
-
-            used = endImage.GetComponent<Image>().color;
-            endImage.GetComponent<Image>().color = new Color(used.r, used.g, used.b, 0);
-
-            // RESET DEBUG
-            index = 0;
-
-            // RESET TIMER
-            startTime = Time.time;
         }
 
-        if (Input.GetKeyDown(KeyCode.I)) {
-            Leonie[index] = true;
-            index++;
+        if (Input.GetKeyDown(KeyCode.Alpha1)) {
+            Debug.Log("1");
+            solo = true;
+            multi = false;
+            ResetExperience();
         }
 
-        if (Input.GetKeyDown(KeyCode.O)) {
-            Roman[index] = true;
-            index++;
+        if (Input.GetKeyDown(KeyCode.Alpha2)) {
+            Debug.Log("2");
+            solo = false;
+            multi = true;
+            ResetExperience();
         }
+    }
+
+    void ResetExperience() {
+        // RESET LISTS
+        for (int i = 0; i < Leonie.Count; i++) {
+            Leonie[i] = false;
+        }
+
+        for (int i = 0; i < Roman.Count; i++) {
+            Roman[i] = false;
+        }
+
+        for (int i = 0; i < perleCount; i++) {
+            Perle[i] = false;
+        }
+
+        for (int i = 0; i < aglae1Count; i++) {
+            Aglae1[i] = false;
+        }
+
+        for (int i = 0; i < aglae2Count; i++) {
+            Aglae2[i] = false;
+        }
+
+        for (int i = 0; i < marcelCount; i++) {
+            Marcel[i] = false;
+        }
+
+        // RESET IMAGES TRANSPARENCY
+        Color used = Leonie_50.GetComponent<Image>().color;
+        Leonie_50.GetComponent<Image>().color = new Color(used.r, used.g, used.b, 0);
+
+        used = Leonie_100.GetComponent<Image>().color;
+        Leonie_100.GetComponent<Image>().color = new Color(used.r, used.g, used.b, 0);
+
+        used = Roman_50.GetComponent<Image>().color;
+        Roman_50.GetComponent<Image>().color = new Color(used.r, used.g, used.b, 0);
+
+        used = Roman_100.GetComponent<Image>().color;
+        Roman_100.GetComponent<Image>().color = new Color(used.r, used.g, used.b, 0);
+
+
+        used = Perle_100.GetComponent<Image>().color;
+        Perle_100.GetComponent<Image>().color = new Color(used.r, used.g, used.b, 0);
+
+        used = Aglae1_50.GetComponent<Image>().color;
+        Aglae1_50.GetComponent<Image>().color = new Color(used.r, used.g, used.b, 0);
+
+        used = Aglae1_100.GetComponent<Image>().color;
+        Aglae1_100.GetComponent<Image>().color = new Color(used.r, used.g, used.b, 0);
+
+        used = Aglae2_50.GetComponent<Image>().color;
+        Aglae2_50.GetComponent<Image>().color = new Color(used.r, used.g, used.b, 0);
+
+        used = Aglae2_100.GetComponent<Image>().color;
+        Aglae2_100.GetComponent<Image>().color = new Color(used.r, used.g, used.b, 0);
+
+        used = Marcel_50.GetComponent<Image>().color;
+        Marcel_50.GetComponent<Image>().color = new Color(used.r, used.g, used.b, 0);
+
+        used = Marcel_100.GetComponent<Image>().color;
+        Marcel_100.GetComponent<Image>().color = new Color(used.r, used.g, used.b, 0);
+
+        used = endPanel.GetComponent<Image>().color;
+        endPanel.GetComponent<Image>().color = new Color(used.r, used.g, used.b, 0);
+
+        used = endImage.GetComponent<Image>().color;
+        endImage.GetComponent<Image>().color = new Color(used.r, used.g, used.b, 0);
+
+        // RESET DEBUG
+        index = 0;
+
+        // RESET TIMER
+        startTime = Time.time;
     }
 }
