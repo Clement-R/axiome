@@ -1383,8 +1383,36 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   frames:
-  - {fileID: 21300000, guid: ea7718dd76e6dae498135f4d61a3f8db, type: 3}
-  - {fileID: 21300000, guid: 686f02dfbb3486242bf5fd539d30b607, type: 3}
+  - {fileID: 21300000, guid: 6e0206471086eb045849ae00cfa509cd, type: 3}
+  - {fileID: 21300000, guid: 3c7f71c092a0a1b4f8e5e806312afc43, type: 3}
+  - {fileID: 21300000, guid: 4e875f39a2a9b4644b79b18655d63ad4, type: 3}
+  - {fileID: 21300000, guid: ba0443d57a75cae44bd5d25210265c7f, type: 3}
+  - {fileID: 21300000, guid: d3486de2fbd35104b9c9e2df38c6d521, type: 3}
+  - {fileID: 21300000, guid: 83c79e6c34c5d9c41b084b04c95af964, type: 3}
+  - {fileID: 21300000, guid: 245db6d43fe122b48b28e06eb2b45f63, type: 3}
+  - {fileID: 21300000, guid: f65674babe91e11419294ee6731ba698, type: 3}
+  - {fileID: 21300000, guid: a870da7929fc01847af5ec48d143fcf9, type: 3}
+  - {fileID: 21300000, guid: 37829a1780ea77244a2cd8f8f88c2bea, type: 3}
+  - {fileID: 21300000, guid: f4c2b8473d5b38e4f8c324bc9c467254, type: 3}
+  - {fileID: 21300000, guid: 2de79777dcf0d9143a0322c5b1ee929a, type: 3}
+  - {fileID: 21300000, guid: 990f112fb2dcc5c4b96b1346557bbf43, type: 3}
+  - {fileID: 21300000, guid: 4734319971ae70a4d9680c9f2973b961, type: 3}
+  - {fileID: 21300000, guid: a2a9bcba14910ef4fab7872e473140a7, type: 3}
+  - {fileID: 21300000, guid: 49f097089b610754dab07f9d134725df, type: 3}
+  - {fileID: 21300000, guid: bef42ff14257be64fa4af641e6cddc90, type: 3}
+  - {fileID: 21300000, guid: b7e7ecc2bdcc1884c93993cd9677178a, type: 3}
+  - {fileID: 21300000, guid: 01e278d17b213ca48a26b589208fd658, type: 3}
+  - {fileID: 21300000, guid: ea66715a4023c6f4f96dde277574aebc, type: 3}
+  - {fileID: 21300000, guid: 875bdc5c1270477418ae396ab12aab51, type: 3}
+  - {fileID: 21300000, guid: 66d66303c910ab249acb79d9701420f1, type: 3}
+  - {fileID: 21300000, guid: 920f374d51540f046b6171ec23d767d6, type: 3}
+  - {fileID: 21300000, guid: c5ef4285b55814c43a80167abee00bf7, type: 3}
+  - {fileID: 21300000, guid: 2c5f36e39a2e8a94ea10b04a2c7fc197, type: 3}
+  - {fileID: 21300000, guid: 1997aefadfd5ccf43b10c26e97b25a7f, type: 3}
+  - {fileID: 21300000, guid: 5d665edcebe45c446a4b9108e9108ec4, type: 3}
+  - {fileID: 21300000, guid: a39f639336adab847a253c31a55706ed, type: 3}
+  - {fileID: 21300000, guid: 4e94cf9567a85214ab77f433e83593d4, type: 3}
+  - {fileID: 21300000, guid: df8e944352dccab4f9c527a02f7e9400, type: 3}
   framesPerSecond: 12
 --- !u!114 &1754749481
 MonoBehaviour:
@@ -1405,7 +1433,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: ea7718dd76e6dae498135f4d61a3f8db, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 6e0206471086eb045849ae00cfa509cd, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
