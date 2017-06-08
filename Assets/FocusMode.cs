@@ -8,6 +8,8 @@ public class FocusMode : MonoBehaviour {
         var vuforia = VuforiaARController.Instance;
         vuforia.RegisterVuforiaStartedCallback(OnVuforiaStarted);
         vuforia.RegisterOnPauseCallback(OnPaused);
+
+        Debug.LogWarning("Am I working ?");
     }
 
     private void OnVuforiaStarted() {
