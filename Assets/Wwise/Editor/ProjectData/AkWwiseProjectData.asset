@@ -16,8 +16,8 @@ MonoBehaviour:
   - PhysicalPath: Events\Default Work Unit.wwu
     ParentPhysicalPath: 
     Guid: '{9A008EA6-78AA-4382-B22A-A38632770768}'
-    m_lastTimePsrt1: 143290402
-    m_lastTimePart2: -1999327779
+    m_lastTimePsrt1: -1347569257
+    m_lastTimePart2: -1999327431
     List:
     - Name: ambiance
       Path: Default Work Unit\ambiance
@@ -28,6 +28,16 @@ MonoBehaviour:
         ObjectType: 3
       ID: -1313589867
       Guid: 9e0c0ad71c31a748987d36a1d695b7b3
+      maxAttenuation: 0
+    - Name: fin_experience
+      Path: Default Work Unit\fin_experience
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: fin_experience
+        ObjectType: 3
+      ID: -1265441501
+      Guid: 291cf62bbdd7f44fa4e840bb79707b6e
       maxAttenuation: 0
     - Name: Play_albumEnfantMort_1
       Path: Default Work Unit\Play_albumEnfantMort_1
@@ -129,6 +139,16 @@ MonoBehaviour:
       ID: 917128578
       Guid: b6deb22f6a6dc146b70739696a88f160
       maxAttenuation: 0
+    - Name: reset
+      Path: Default Work Unit\reset
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: reset
+        ObjectType: 3
+      ID: -277512134
+      Guid: 018998eac9c9f5488625a92b288d995d
+      maxAttenuation: 0
     - Name: tableau_complete
       Path: Default Work Unit\tableau_complete
       PathAndIcons:
@@ -174,8 +194,8 @@ MonoBehaviour:
   - PhysicalPath: SoundBanks\Default Work Unit.wwu
     ParentPhysicalPath: 
     Guid: '{6B654014-F522-4DBE-979C-31FBAA774C3B}'
-    m_lastTimePsrt1: -2067495019
-    m_lastTimePart2: -1999328630
+    m_lastTimePsrt1: -886552392
+    m_lastTimePart2: -1999327431
     List:
     - Name: SoundBank
       Path: Default Work Unit\SoundBank
