@@ -1859,7 +1859,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cdbcae68e7a7f5c40b4b8135ed42a93f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  experienceDuration: 720
+  experienceDuration1: 720
+  experienceDuration2: 780
   debug: 0
   Leonie_50: {fileID: 1093126039}
   Leonie_100: {fileID: 1760864778}
