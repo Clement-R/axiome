@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: 7d64c5bf6528ac542a4901f6e9ca33da
-timeCreated: 1496877897
+timeCreated: 1497103341
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName: {}
@@ -66,6 +66,14 @@ TextureImporter:
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 1
+  - buildTarget: Standalone
+    maxTextureSize: 512
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
   spriteSheet:
     serializedVersion: 2
     sprites: []
