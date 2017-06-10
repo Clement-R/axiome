@@ -266,12 +266,14 @@ public class ResultScreen : MonoBehaviour {
         if (solo && Time.time - startTime > experienceDuration1) {
             if (endPanel.GetComponent<Image>().color.a == 0) {
                 StartCoroutine(ShowImage(endPanel.GetComponent<Image>()));
+                AkSoundEngine.PostEvent("fin_experience", gameObject);
             }
         }
 
         if (multi && Time.time - startTime > experienceDuration2) {
             if (endPanel.GetComponent<Image>().color.a == 0) {
                 StartCoroutine(ShowImage(endPanel.GetComponent<Image>()));
+                AkSoundEngine.PostEvent("fin_experience", gameObject);
             }
         }
 
@@ -291,6 +293,8 @@ public class ResultScreen : MonoBehaviour {
     }
 
     void ResetExperience() {
+        AkSoundEngine.PostEvent("reset", gameObject);
+
         // RESET LISTS
         for (int i = 0; i < Leonie.Count; i++) {
             Leonie[i] = false;
